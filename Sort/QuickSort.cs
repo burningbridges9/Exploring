@@ -25,22 +25,22 @@
         public int GetPivotIndex(int[] array, int min, int max)
         {
             PrintArray(array, min, max);
-            int pivot = min - 1;// for this moment we dont know this, set as min -1
+            int pivotIndex = min;
+            int pivotValue = array[max];
 
-            for (int i = min; i <= max; i++)
+            for (int i = min; i < max; i++)
             {
-                if (array[i] < array[max])
+                if (array[i] <= pivotValue)
                 {
-                    pivot++;
-                    Swap(ref array[pivot], ref array[i]);
+                    Swap(ref array[pivotIndex], ref array[i]); // swap left with current
                     PrintArray(array, min, max);
+                    pivotIndex++; // move pointer to the right
                 }
             }
 
-            pivot++;
-            Swap(ref array[pivot], ref array[max]);
+            Swap(ref array[pivotIndex], ref array[max]); // move pivot to right position
             PrintArray(array, min, max);
-            return pivot;
+            return pivotIndex;
         }
     }
 }

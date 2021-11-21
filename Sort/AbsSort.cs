@@ -5,7 +5,7 @@ namespace Sort
 {
     public abstract class AbsSort
     {
-        int[] unsorted = { 4, 5, 1, 5, 6, 7, 1, 3, 2, 9, 2, 6, 3,4 };
+        int[] unsorted = { 4, 5, 1, 11, 6, 7};
 
         public int[] Unsorted => unsorted;
 
